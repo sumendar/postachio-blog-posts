@@ -1,0 +1,41 @@
+---
+title: "Air-Quality-Visualisation"
+author: "sumendar"
+date: "November 10, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installing required packages
+
+```{r eval=FALSE}
+install.packages(c("xlsx","rjava"), repos='http://cran.us.r-project.org')
+```
+
+
+
+## setting working directory
+
+
+```{r}
+setwd("E:/postachio-blog-posts/Air-Quality")
+```
+
+## Importing Data
+
+
+
+```{r}
+ #loading csv files
+Data <- read.table(file="EPA_Data.csv",
+                  sep=",",
+                  header=TRUE,
+                  colClasses=c("Date","factor",
+                               rep("numeric", 5)),
+                  na.strings="NA")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
